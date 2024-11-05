@@ -10,10 +10,10 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="#A8E6A8"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <!-- Plug Icon -->
     <ImageView
@@ -68,8 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleX="1.5"
-            android:scaleY="1.5"
-            android:onClick="onSwitchClicked" />
+            android:scaleY="1.5" />
 
         <TextView
             android:id="@+id/textViewSwitchStatus"
@@ -155,12 +154,11 @@
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
-            <com.jjoe64.graphview.GraphView
+            <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChartView"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="8dp"/>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
