@@ -4,6 +4,8 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
+
 import com.github.mikephil.charting.data.Entry;
 import java.util.List;
 
@@ -21,19 +23,19 @@ public interface SmartPlugApi {
     @GET("plug/status")
     Call<ResponseBody> getPlugStatus();
 
-    // Optional: Get power consumption data
+    // Get the current power consumption of the plug
     @GET("plug/power")
-    Call<ResponseBody> getPowerConsumption();
+    Call<ResponseBody> getPower();
 
-    // Optional: Get usage statistics
-    @GET("plug/usage")
-    Call<ResponseBody> getUsageStatistics();
+    // Get the idle time duration
+    @GET("plug/idleTime")
+    Call<ResponseBody> getIdleTime();
 
     // Get the average monthly use percentage
     @GET("monthly-use")
     Call<ResponseBody> getMonthlyUse();
 
-    // Optional: Get chart data (assuming you're using a List<Entry>)
-    @GET("chartData") // Adjust the URL as needed for your API
-    Call<List<Entry>> getChartData();
+    // Get chart data (assuming you're using a List<Entry>)
+    @GET("chartdata")
+    Call<List<Entry>> getChartData(@Query("timePeriod") String timePeriod);
 }
